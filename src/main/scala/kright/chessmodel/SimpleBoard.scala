@@ -1,7 +1,7 @@
-package kright
+package kright.chessmodel
 
+import kright.Player
 import kright.chessmodel.Board.BoardAction
-import kright.chessmodel._
 import kright.chessmodel.figure.{Empty, Figure}
 
 /**
@@ -54,16 +54,4 @@ class SimpleBoard(val currentPlayer: Int,
 	}
 }
 
-class SimpleBoardBuilder() extends BoardBuilder {
-	val array: Array[Figure] = (0 until 64).map(i => Empty).toArray
 
-	override def board: Board = new SimpleBoard(1, GamePlaying, None, array.clone())
-
-	override def add(boardActions: Seq[(Figure, Position)]): BoardBuilder = {
-		boardActions.foreach {
-			case (fig, pos) =>
-				array(pos.x + pos.y * 8) = fig
-		}
-		this
-	}
-}

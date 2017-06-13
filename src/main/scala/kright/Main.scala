@@ -1,7 +1,7 @@
 package kright
 
 import kright.ai._
-import kright.chessmodel.{Board, BoardBuilder}
+import kright.chessmodel.{Board, BoardBuilder, SimpleBoardBuilder}
 import kright.ai.walker.{MinMaxClever, MinMaxReordered, MinMaxWalker}
 
 /**

@@ -1,7 +1,6 @@
 package kright.chessmodel
 
 import Board.BoardAction
-import kright.SimpleBoardBuilder
 
 /**
 	* Created by lgor on 6/10/17.
