@@ -31,14 +31,12 @@ object Main extends App {
 			(WinFactor.withPosition, "withPos")
 		)
 
-		time {
-			for (w <- walkers; f <- factors) {
-				println()
-				val t = time {
-					println(AI(w._1, f._1).doTurn(board))
-				}
-				println(s"${t}ms\t${w._2}\t${f._2}")
+		for (w <- walkers; f <- factors) {
+			println()
+			val t = time {
+				println(AI(w._1, f._1).doTurn(board))
 			}
+			println(s"${t}ms\t${w._2}\t${f._2}")
 		}
 	}
 
