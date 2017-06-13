@@ -71,7 +71,7 @@ object IncrementalInfo {
 				case Knight(p) => info(p).knights -= 1
 				case Bishop(p) => info(p).bishops -= 1
 				case Queen(p) => info(p).queens -= 1
-				case King(p) => info(p).kingWasMoved = false
+				case King(p) => info(p).kingWasMoved = true
 			}
 
 			act._1 match {
@@ -116,7 +116,7 @@ class PlayerSensitiveInfo(var pawns: Int,
                           var rookHWasMoved: Boolean,
                           var kingWasMoved: Boolean) {
 
-	def this() = this(0, 0, 0, 0, 0, new Array[Int](8), false, false, true)
+	def this() = this(0, 0, 0, 0, 0, new Array[Int](8), false, false, false)
 
 	def copy() = new PlayerSensitiveInfo(pawns, rooks, knights, bishops, queens, pawnsOnLines.clone(), rookAWasMoved, rookHWasMoved, kingWasMoved)
 
